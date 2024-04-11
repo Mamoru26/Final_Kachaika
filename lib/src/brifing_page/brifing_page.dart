@@ -1,4 +1,4 @@
-import 'package:Kachaika/core/background.dart';
+import 'package:petprojectkachaika/core/background.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'view/calculate_view_model.dart';

@@ -1,5 +1,5 @@
-import 'package:Kachaika/core/background.dart';
-import 'package:Kachaika/src/init_page/widgets/export_widgets.dart';
+import 'package:petprojectkachaika/core/background.dart';
+import 'package:petprojectkachaika/src/init_page/widgets/export_widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../brifing_page/brifing_page.dart';

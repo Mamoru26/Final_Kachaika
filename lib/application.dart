@@ -1,4 +1,4 @@
-import 'package:Kachaika/src/init_page/init.dart';
+import 'package:petprojectkachaika/src/init_page/init.dart';
 import 'package:flutter/material.dart';
 
 import 'core/export.dart';
