@@ -2,6 +2,7 @@ import 'package:petprojectkachaika/core/background.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'view/calculate_view_model.dart';
+import 'view/snackbar_services.dart';
 import 'widgets/export.dart';
 
 // ignore: must_be_immutable
@@ -14,7 +15,8 @@ class CalculatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CalculateModel())
+        ChangeNotifierProvider(create: (context) => CalculateModel()),
+        ChangeNotifierProvider(create: (context) => SnackBarService())
       ],
       child: Consumer<CalculateModel>(
         builder: (context, value, child) => Scaffold(
@@ -22,9 +24,9 @@ class CalculatePage extends StatelessWidget {
               canPop: false,
               child: SafeArea(
                   child: GestureDetector(
-                    onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-                    child: Backgrund(Column(
-                                    children: [
+                onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                child: Backgrund(Column(
+                  children: [
                     Expanded(
                       flex: 1,
                       child: ListView(
@@ -41,8 +43,8 @@ class CalculatePage extends StatelessWidget {
                                     textalign: TextAlign.center,
                                   )),
                               Padding(
-                                padding:
-                                    EdgeInsets.only(top: 30, right: 16, left: 16),
+                                padding: EdgeInsets.only(
+                                    top: 30, right: 16, left: 16),
                                 child: DynamicTextWidget(
                                   text:
                                       "Для расчета чаевых необходимо заполнить данные ниже:",
@@ -64,7 +66,7 @@ class CalculatePage extends StatelessWidget {
                             padding: const EdgeInsets.only(
                                 left: 16, right: 16, top: 10),
                             child: BaseTextField(
-                                hintText: '', controller: numberofguests),
+                                hintText: '', controller: amountreceipt),
                           ),
                           const Padding(
                             padding: EdgeInsets.only(top: 30, left: 16),
@@ -79,7 +81,7 @@ class CalculatePage extends StatelessWidget {
                                 left: 16, right: 16, top: 10),
                             child: BaseTextField(
                                 hintText: value.amountoneperson.toString(),
-                                controller: amountreceipt),
+                                controller: numberofguests),
                           ),
                           const Padding(
                             padding: EdgeInsets.only(top: 30, left: 16),
@@ -110,19 +112,25 @@ class CalculatePage extends StatelessWidget {
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 16, right: 16, bottom: 5),
+                        padding: const EdgeInsets.only(
+                            left: 16, right: 16, bottom: 5),
                         child: BaseButtonNoGradient(
                           onPressed: () {
-                            CalculateModel model = context.read<CalculateModel>();
-                            model.getCalculateData(amountreceipt.value,numberofguests.value);
+                            CalculateModel modelcalculate =
+                                context.read<CalculateModel>();
+                            var amount = amountreceipt.value.text;
+                            var guests = numberofguests.value.text;
+                            modelcalculate.getCalculateData(
+                              amount,
+                              guests,
+                            );
                           },
                         ),
                       ),
                     ),
-                                    ],
-                                  )),
-                  ))),
+                  ],
+                )),
+              ))),
         ),
       ),
     );
