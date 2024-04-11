@@ -29,8 +29,8 @@ class CalculateModel extends ChangeNotifier {
 
   void getCalculateData(TextEditingValue value, TextEditingValue value1) {
     try {
-      _fullamount = value.text.isNotEmpty ? double.parse(value.text) : 0.0;
-      _count = value1.text.isNotEmpty ? double.parse(value1.text) : 0.0;
+      _fullamount = value.text == "" ? double.parse(value.text) : 0.0;
+      _count = value1.text == "" ? double.parse(value1.text) : 0.0;
     } catch (e) {
       print(e);
     }

@@ -27,6 +27,7 @@ class BaseTextField extends StatelessWidget {
           horizontal: 16,
         ),
         child: TextField(
+          keyboardType: TextInputType.number,
           style: TextStyle(
               color: HexColor('FFFFFF'),
               fontSize: 18,
