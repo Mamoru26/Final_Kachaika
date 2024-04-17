@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:petprojectkachaika/core/background.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../core/router/router.dart';
 import 'view/calculate_view_model.dart';
 import 'view/snackbar_services.dart';
 import 'widgets/export.dart';
@@ -125,7 +126,9 @@ class CalculatePage extends StatelessWidget {
                           ),
                         ),
                         BaseButtonNoGradient(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.router.push(TerminalRoute());
+                          },
                         ),
                       ],
                     )),

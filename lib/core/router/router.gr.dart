@@ -23,7 +23,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: CalculatePage(key: args.key),
       );
     },
-    FinalCalculate.name: (routeData) {
+    CalculateRoute2.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const CalculatePage2(),
@@ -39,6 +39,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SbpPage(),
+      );
+    },
+    TerminalRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TerminalPage(),
       );
     },
   };
@@ -74,15 +80,15 @@ class CalculateRouteArgs {
 }
 
 /// generated route for
-/// [FinalCalculate]
-class FinalCalculate extends PageRouteInfo<void> {
-  const FinalCalculate({List<PageRouteInfo>? children})
+/// [CalculatePage2]
+class CalculateRoute2 extends PageRouteInfo<void> {
+  const CalculateRoute2({List<PageRouteInfo>? children})
       : super(
-          FinalCalculate.name,
+          CalculateRoute2.name,
           initialChildren: children,
         );
 
-  static const String name = 'FinalCalculate';
+  static const String name = 'CalculateRoute2';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -111,6 +117,20 @@ class SbpRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SbpRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TerminalPage]
+class TerminalRoute extends PageRouteInfo<void> {
+  const TerminalRoute({List<PageRouteInfo>? children})
+      : super(
+          TerminalRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TerminalRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

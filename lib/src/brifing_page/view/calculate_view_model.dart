@@ -23,18 +23,8 @@ class CalculateModel extends ChangeNotifier {
       TextEditingController amount, TextEditingController guests) {
     try {
       amount.value.text == ""
-          ? ScaffoldMessenger.of(context)
-                              .showSnackBar(const SnackBar(
-                                  duration: Duration(seconds: 5),
-                                  backgroundColor: Colors.red,
-                                  content: Center(
-                                      child: Text(
-                                    'Связь с сервером отсутстпует',
-                                    style: TextStyle(color: Colors.white,fontSize: 16),
-                                  ))))
+          ? _fullamount = 0
           : _fullamount = double.parse(amount.value.text);
-      // _fullamount =
-      //     amount.value.text != "" ? double.parse(amount.value.text)
     } catch (e) {}
     try {
       _count = guests.text != "" ? double.parse(guests.text) : 0;
