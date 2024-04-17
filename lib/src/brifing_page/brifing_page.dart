@@ -30,110 +30,107 @@ class CalculatePage extends StatelessWidget {
                 //Виджет GestureDetector предоставляет возможность внутри Scaffold принудительного закрытия клавиатуры.
                 onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
                 //Параметр onTap говорит о принудительном закрытии клавиатуры при нажатии на экран.
-                child: Backgrund(Column(
+                child: Stack(
                   children: [
-                    Expanded(
-                      flex: 1,
-                      child: ListView(
-                        // crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Column(
+                    Backgrund(Column(
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: ListView(
                             children: [
-                              Padding(
-                                  padding: EdgeInsets.only(
-                                      right: 90, left: 90, top: 22),
-                                  child: DynamicTextWidget(
-                                    text: 'Калькулятор чаевых',
-                                    fontSize: 20,
-                                    textalign: TextAlign.center,
-                                  )),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    top: 30, right: 16, left: 16),
+                              const Column(
+                                children: [
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          right: 90, left: 90, top: 22),
+                                      child: DynamicTextWidget(
+                                        text: 'Калькулятор чаевых',
+                                        fontSize: 20,
+                                        textalign: TextAlign.center,
+                                      )),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 30, right: 16, left: 16),
+                                    child: DynamicTextWidget(
+                                      text:
+                                          "Для расчета чаевых необходимо заполнить данные ниже:",
+                                      fontSize: 18,
+                                      textalign: TextAlign.center,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(top: 30, left: 16),
                                 child: DynamicTextWidget(
-                                  text:
-                                      "Для расчета чаевых необходимо заполнить данные ниже:",
+                                  text: "Общая сумма счёта:",
                                   fontSize: 18,
-                                  textalign: TextAlign.center,
+                                  textalign: TextAlign.left,
                                 ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 16, right: 16, top: 10),
+                                child: BaseTextField(
+                                    hintText: '', controller: amountreceipt),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(top: 30, left: 16),
+                                child: DynamicTextWidget(
+                                  text: "Количество гостей",
+                                  fontSize: 18,
+                                  textalign: TextAlign.left,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 16, right: 16, top: 10),
+                                child: BaseTextField(
+                                    hintText: '', controller: numberofguests),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(top: 30, left: 16),
+                                child: DynamicTextWidget(
+                                  text: "Процент чаевых",
+                                  fontSize: 18,
+                                  textalign: TextAlign.left,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20, right: 20, top: 10),
+                                child: RadioGroup(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 16, right: 16, top: 29),
+                                child: GradientButton(
+                                  onPressed: () {
+                                    CalculateModel modelcalculate =
+                                        context.read<CalculateModel>();
+                                    var amount = amountreceipt;
+                                    var guests = numberofguests;
+                                    modelcalculate.getCalculateData(
+                                      amount,
+                                      guests,
+                                    );
+                                  },
+                                ),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.of(context).viewInsets.bottom,
                               ),
                             ],
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 30, left: 16),
-                            child: DynamicTextWidget(
-                              text: "Общая сумма счёта:",
-                              fontSize: 18,
-                              textalign: TextAlign.left,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 16, right: 16, top: 10),
-                            child: BaseTextField(
-                                hintText: '', controller: amountreceipt),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 30, left: 16),
-                            child: DynamicTextWidget(
-                              text: "Количество гостей",
-                              fontSize: 18,
-                              textalign: TextAlign.left,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 16, right: 16, top: 10),
-                            child: BaseTextField(
-                                hintText: '', controller: numberofguests),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 30, left: 16),
-                            child: DynamicTextWidget(
-                              text: "Процент чаевых",
-                              fontSize: 18,
-                              textalign: TextAlign.left,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 20, right: 20, top: 10),
-                            child: RadioGroup(),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 16, right: 16, top: 29),
-                            child: GradientButton(
-                              onPressed: () {},
-                            ),
-                          ),
-                          Container(
-                            height: MediaQuery.of(context).viewInsets.bottom,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 16, right: 16, bottom: 5),
-                        child: BaseButtonNoGradient(
-                          onPressed: () {
-                            CalculateModel modelcalculate =
-                                context.read<CalculateModel>();
-                            var amount = amountreceipt.value.text;
-                            var guests = numberofguests.value.text;
-                            modelcalculate.getCalculateData(
-                              amount,
-                              guests,
-                            );
-                          },
                         ),
-                      ),
-                    ),
+                        BaseButtonNoGradient(
+                          onPressed: () {},
+                        ),
+                      ],
+                    )),
                   ],
-                )),
+                ),
               ))),
         ),
       ),

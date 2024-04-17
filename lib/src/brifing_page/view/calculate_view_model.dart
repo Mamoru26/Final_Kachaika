@@ -19,15 +19,27 @@ class CalculateModel extends ChangeNotifier {
   double get count => _count;
   double get procent => _procent;
 
-  void getCalculateData(String amount, String guests) {
+  void getCalculateData(
+      TextEditingController amount, TextEditingController guests) {
     try {
-      _fullamount = amount == "" ? double.parse(amount) : 0;
+      amount.value.text == ""
+          ? ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                                  duration: Duration(seconds: 5),
+                                  backgroundColor: Colors.red,
+                                  content: Center(
+                                      child: Text(
+                                    'Связь с сервером отсутстпует',
+                                    style: TextStyle(color: Colors.white,fontSize: 16),
+                                  ))))
+          : _fullamount = double.parse(amount.value.text);
+      // _fullamount =
+      //     amount.value.text != "" ? double.parse(amount.value.text)
     } catch (e) {}
     try {
-      _count = guests == "" ? double.parse(guests) : 0;
-    } catch (e) {
-      print(e);
-    }
+      _count = guests.text != "" ? double.parse(guests.text) : 0;
+    } catch (e) {}
+
     notifyListeners();
   }
 
