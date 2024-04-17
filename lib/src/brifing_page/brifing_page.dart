@@ -18,15 +18,18 @@ class CalculatePage extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CalculateModel()),
-        ChangeNotifierProvider(create: (context) => SnackBarService())
+        ChangeNotifierProvider(create: (context) => SnackBarService()),
       ],
       child: Consumer<CalculateModel>(
         builder: (context, value, child) => Scaffold(
           body: PopScope(
+              //Виджет PopScope предоставляет возможность внутри Scaffold принудительного закрытия экрана.
               canPop: false,
               child: SafeArea(
                   child: GestureDetector(
+                //Виджет GestureDetector предоставляет возможность внутри Scaffold принудительного закрытия клавиатуры.
                 onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                //Параметр onTap говорит о принудительном закрытии клавиатуры при нажатии на экран.
                 child: Backgrund(Column(
                   children: [
                     Expanded(
@@ -82,8 +85,7 @@ class CalculatePage extends StatelessWidget {
                             padding: const EdgeInsets.only(
                                 left: 16, right: 16, top: 10),
                             child: BaseTextField(
-                                hintText: value.amountoneperson.toString(),
-                                controller: numberofguests),
+                                hintText: '', controller: numberofguests),
                           ),
                           const Padding(
                             padding: EdgeInsets.only(top: 30, left: 16),
@@ -93,9 +95,9 @@ class CalculatePage extends StatelessWidget {
                               textalign: TextAlign.left,
                             ),
                           ),
-                          const Padding(
-                            padding:
-                                EdgeInsets.only(left: 20, right: 20, top: 10),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 20, right: 20, top: 10),
                             child: RadioGroup(),
                           ),
                           Padding(

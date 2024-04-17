@@ -1,5 +1,4 @@
 import 'package:petprojectkachaika/core/router/router.dart';
-import 'package:petprojectkachaika/src/init_page/init.dart';
 import 'package:flutter/material.dart';
 
 import 'core/export.dart';

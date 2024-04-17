@@ -3,11 +3,12 @@
 import 'package:flutter/material.dart';
 
 class CalculateModel extends ChangeNotifier {
-  double _fullamount = 0.0;
-  double _allamount = 0.0;
-  double _amountoneperson = 0.0;
-  double _amountperson = 0.0;
-  double _count = 0.0;
+  double _fullamount = 0;
+  double _allamount = 0;
+  double _amountoneperson = 0;
+  double _amountperson = 0;
+  double _count = 0;
+  double _procent = 0;
 
   // Getters
 
@@ -16,16 +17,22 @@ class CalculateModel extends ChangeNotifier {
   double get amountoneperson => _amountoneperson;
   double get amountperson => _amountperson;
   double get count => _count;
+  double get procent => _procent;
 
   void getCalculateData(String amount, String guests) {
     try {
-      _fullamount = amount == "" ? double.parse(amount) : 0.0;
+      _fullamount = amount == "" ? double.parse(amount) : 0;
     } catch (e) {}
     try {
-      _count = guests == "" ? double.parse(guests) : 0.0;
+      _count = guests == "" ? double.parse(guests) : 0;
     } catch (e) {
       print(e);
     }
+    notifyListeners();
+  }
+
+  void getCalculateProcent(value) {
+    _procent = value / 100;
     notifyListeners();
   }
 }
