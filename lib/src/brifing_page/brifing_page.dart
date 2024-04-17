@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:petprojectkachaika/core/background.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -5,6 +6,7 @@ import 'view/calculate_view_model.dart';
 import 'view/snackbar_services.dart';
 import 'widgets/export.dart';
 
+@RoutePage()
 // ignore: must_be_immutable
 class CalculatePage extends StatelessWidget {
   TextEditingController amountreceipt = TextEditingController();

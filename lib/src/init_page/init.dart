@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:petprojectkachaika/core/background.dart';
 import 'package:petprojectkachaika/src/init_page/widgets/export_widgets.dart';
 import 'package:flutter/material.dart';
+import '../../core/router/router.dart';
 
-import '../brifing_page/brifing_page.dart';
-
+@RoutePage()
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -16,8 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     //Создаем видимость загрузки для показа инициализации
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => CalculatePage()));
+      context.router.push(CalculateRoute());
     });
     super.initState();
   }
