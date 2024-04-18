@@ -127,7 +127,7 @@ class CalculatePage extends StatelessWidget {
                         ),
                         BaseButtonNoGradient(
                           onPressed: () {
-                            context.router.push(TerminalRoute());
+                            context.router.push(const TerminalRoute());
                           },
                         ),
                       ],
