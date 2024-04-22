@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class BaseTextField extends StatelessWidget {
   final String hintText;
@@ -29,12 +30,13 @@ class BaseTextField extends StatelessWidget {
           keyboardType: TextInputType.number,
           style: Theme.of(context).textTheme.titleMedium,
           controller: controller,
+          inputFormatters: <TextInputFormatter>[
+            FilteringTextInputFormatter.digitsOnly
+          ],
           decoration: InputDecoration(
             border: InputBorder.none,
             hintText: hintText,
-            hintStyle: TextStyle(
-              color: Colors.white.withOpacity(0.4),
-            ),
+            hintStyle: Theme.of(context).textTheme.displayMedium,
           ),
         ),
       ),

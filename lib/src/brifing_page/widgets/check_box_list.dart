@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class RadioGroup extends StatefulWidget {
-  RadioGroup({super.key});
+  const RadioGroup({super.key});
 
   @override
   // ignore: library_private_types_in_public_api

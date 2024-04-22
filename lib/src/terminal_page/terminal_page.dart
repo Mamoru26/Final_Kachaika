@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:petprojectkachaika/core/background.dart';
+import '../../core/export.dart';
 
 @RoutePage()
 class TerminalPage extends StatelessWidget {
@@ -9,10 +9,30 @@ class TerminalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Backgrund(const Center(
-        child: Text('TerminalPage', style: TextStyle(color: Colors.white)),
-      )),
-    ));
+        body: Backgrund(SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 22,left: 4),
+        child: ListView(
+          children: const [
+            Stack(
+              children: [
+                CustomBackButton(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 98),
+                  child: HeaderTextWidget(text: 'Как расчитываются чаевые?', textalign: TextAlign.center,))
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16, top: 30, right: 16),
+              child: Column(
+            children:[
+              
+            ]
+              ),
+            )
+          ],
+        ),
+      ),
+    )));
   }
 }

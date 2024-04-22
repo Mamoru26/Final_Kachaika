@@ -20,17 +20,20 @@ class CalculateField extends StatelessWidget {
           text: headertext,
           textalign: TextAlign.left,
         ),
-        Container(
-          width: double.infinity,
-          height: 55,
-          decoration: BoxDecoration(
-              color: const Color(0xFFD39FF2).withOpacity(0.2),
-              borderRadius: BorderRadius.circular(10)),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              fieldtext,
-              style: Theme.of(context).textTheme.titleMedium,
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Container(
+            width: double.infinity,
+            height: 58,
+            decoration: BoxDecoration(
+                color: const Color(0xFFD39FF2).withOpacity(0.2),
+                borderRadius: BorderRadius.circular(10)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: Text(
+                fieldtext,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
             ),
           ),
         )

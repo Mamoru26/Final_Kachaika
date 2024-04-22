@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class GradientButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color startColor, endColor;
+  final String text;
 
   const GradientButton({
     super.key,
     required this.onPressed,
     this.startColor = const Color(0xFFC985F2),
     this.endColor = const Color(0xFF6267D6),
+    required this.text,
   });
 
   @override
@@ -27,7 +29,7 @@ class GradientButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         child: Text(
-          'Рассчитать',
+          text,
           style: Theme.of(context).textTheme.titleMedium,
         ),
       ),

@@ -16,23 +16,20 @@ class CalculatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => CalculateModel()),
-      ],
-      child: Consumer<CalculateModel>(
-        builder: (context, value, child) => Scaffold(
-          body: PopScope(
-              //Виджет PopScope предоставляет возможность внутри Scaffold принудительного закрытия экрана.
-              canPop: false,
-              child: SafeArea(
+    return Consumer<CalculateModel>(
+      builder: (context, value, child) => Scaffold(
+        body: PopScope(
+            //Виджет PopScope предоставляет возможность внутри Scaffold принудительного закрытия экрана.
+            canPop: false,
+            child: Backgrund(
+              SafeArea(
                   child: GestureDetector(
                 //Виджет GestureDetector предоставляет возможность внутри Scaffold принудительного закрытия клавиатуры.
                 onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
                 //Параметр onTap говорит о принудительном закрытии клавиатуры при нажатии на экран.
                 child: Stack(
                   children: [
-                    Backgrund(Column(
+                    Column(
                       children: [
                         Expanded(
                           flex: 1,
@@ -82,7 +79,7 @@ class CalculatePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(
                                     left: 16, right: 16, top: 10),
                                 child: BaseTextField(
-                                    hintText: '', controller: numberofguests),
+                                    hintText: 'Опционально, по умолчанию - 1', controller: numberofguests),
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(top: 30, left: 16),
@@ -91,8 +88,8 @@ class CalculatePage extends StatelessWidget {
                                   textalign: TextAlign.left,
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(
+                              const Padding(
+                                padding: EdgeInsets.only(
                                     left: 20, right: 20, top: 10),
                                 child: RadioGroup(),
                               ),
@@ -109,14 +106,12 @@ class CalculatePage extends StatelessWidget {
                                       amount,
                                       guests,
                                     );
-                                    context.router
-                                        .push(const CalculateRoute2());
-                                  },
+                                    context.router.push(const CalculateRoute2());
+                                  }, text: 'Рассчитать',
                                 ),
                               ),
                               Container(
-                                height:
-                                    MediaQuery.of(context).viewInsets.bottom,
+                                height: MediaQuery.of(context).viewInsets.bottom,
                               ),
                             ],
                           ),
@@ -127,11 +122,11 @@ class CalculatePage extends StatelessWidget {
                           },
                         ),
                       ],
-                    )),
+                    ),
                   ],
                 ),
-              ))),
-        ),
+              )),
+            )),
       ),
     );
   }

@@ -30,12 +30,16 @@ class CalculateModel extends ChangeNotifier {
       TextEditingController amount, TextEditingController guests) {
     try {
       amount.value.text == ""
-          ? _fullamount = 0
+          ? _fullamount = 1
           : _fullamount = double.parse(amount.value.text);
-    } catch (e) {}
+    } catch (e) {
+      _fullamount = 1;
+    }
     try {
-      _count = guests.text != "" ? double.parse(guests.text) : 0;
-    } catch (e) {}
+      _count = guests.text != "" ? double.parse(guests.text) : 1;
+    } catch (e) {
+      _count = 1;
+    }
     if (_fullamount != 0 && _count != 0) {
       _allamount = _fullamount + (_fullamount * _procent);
       _tips = _fullamount * _procent;
