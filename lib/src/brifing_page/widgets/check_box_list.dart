@@ -44,9 +44,6 @@ class _RadioGroupState extends State<RadioGroup> {
                       dense: true,
                       selectedTileColor: HexColor('D39FF2'),
                       activeColor: HexColor('D39FF2'),
-                      overlayColor:
-                          MaterialStatePropertyAll(HexColor('FFFFFF')),
-                      hoverColor: HexColor('FFFFFF'),
                       value: e.key,
                       groupValue: _selectedRadio,
                       onChanged: _handleRadioChange,
@@ -61,6 +58,7 @@ class _RadioGroupState extends State<RadioGroup> {
                   child: Column(children: [
                     ...radios2.entries.map((e) => RadioListTile(
                         dense: true,
+                        selectedTileColor: HexColor('D39FF2'),
                         activeColor: HexColor('D39FF2'),
                         value: e.key,
                         groupValue: _selectedRadio,

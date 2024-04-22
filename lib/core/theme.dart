@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 ThemeData theme = ThemeData(
   useMaterial3: true,
-  textTheme:  TextTheme(
-    displayMedium: TextStyle(
+  textTheme: TextTheme(
+      displayMedium: TextStyle(
           color: Colors.white.withOpacity(0.4),
           fontSize: 18,
           fontFamily: 'assets/fonts/SFPROregular.ttf'),

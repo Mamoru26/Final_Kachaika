@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:petprojectkachaika/core/background.dart';
+import 'package:petprojectkachaika/core/export.dart';
 import 'package:petprojectkachaika/src/init_page/widgets/export_widgets.dart';
 import 'package:flutter/material.dart';
 import '../../core/router/router.dart';
@@ -25,20 +26,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Center(
-      child: Backgrund(
-        const Column(children: [
-          Padding(
-            padding: EdgeInsets.only(top: 55),
-            child: LogoWidget(),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 366, left: 40, right: 40),
-            child: LinearBarInd(),
-          )
-        ]),
-      ),
-    )));
+        body: Backgrund(
+          const SafeArea(
+              child: Center(
+                child: 
+          Column(children: [
+            Padding(
+              padding: EdgeInsets.only(top: 55),
+              child: LogoWidget(),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 366, left: 40, right: 40),
+              child: LinearBarInd(),
+            )
+          ]),
+                ),
+              ),
+        ));
   }
 }
