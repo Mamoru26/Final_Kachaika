@@ -35,6 +35,7 @@ flutter:
     - assets/background/background.png
     - assets/image/Logo.png
     - assets/fonts/SFPROregular.ttf
+    - assets/image/pop.png
   fonts:
     - family: SFPROregular
       fonts:

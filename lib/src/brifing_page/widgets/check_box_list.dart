@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:petprojectkachaika/src/brifing_page/view/calculate_view_model.dart';
+import 'package:petprojectkachaika/core/view/calculate_view_model.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
@@ -52,10 +52,7 @@ class _RadioGroupState extends State<RadioGroup> {
                       onChanged: _handleRadioChange,
                       title: Text(
                         '${e.value}',
-                        style: TextStyle(
-                            color: HexColor('FFFFFF'),
-                            fontSize: 22,
-                            fontFamily: 'assets/fonts/SFPROregular.ttf'),
+                        style: Theme.of(context).textTheme.bodyLarge,
                       )))
                 ]),
               ),
@@ -70,10 +67,7 @@ class _RadioGroupState extends State<RadioGroup> {
                         onChanged: _handleRadioChange,
                         title: Text(
                           '${e.value}',
-                          style: TextStyle(
-                              color: HexColor('FFFFFF'),
-                              fontSize: 22,
-                              fontFamily: 'assets/fonts/SFPROregular.ttf'),
+                          style: Theme.of(context).textTheme.bodyLarge,
                         )))
                   ]))
             ],

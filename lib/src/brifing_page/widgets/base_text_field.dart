@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class BaseTextField extends StatelessWidget {
   final String hintText;
@@ -28,10 +27,7 @@ class BaseTextField extends StatelessWidget {
         ),
         child: TextField(
           keyboardType: TextInputType.number,
-          style: TextStyle(
-              color: HexColor('FFFFFF'),
-              fontSize: 18,
-              fontFamily: 'assets/fonts/SFPROregular.ttf'),
+          style: Theme.of(context).textTheme.titleMedium,
           controller: controller,
           decoration: InputDecoration(
             border: InputBorder.none,

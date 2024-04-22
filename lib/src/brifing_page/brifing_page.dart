@@ -3,9 +3,9 @@ import 'package:petprojectkachaika/core/background.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/router/router.dart';
-import 'view/calculate_view_model.dart';
-import 'view/snackbar_services.dart';
+import '../../core/view/calculate_view_model.dart';
 import 'widgets/export.dart';
+import '../../core/widgets/header_text.dart';
 
 @RoutePage()
 // ignore: must_be_immutable
@@ -19,7 +19,6 @@ class CalculatePage extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CalculateModel()),
-        ChangeNotifierProvider(create: (context) => SnackBarService()),
       ],
       child: Consumer<CalculateModel>(
         builder: (context, value, child) => Scaffold(
@@ -44,9 +43,8 @@ class CalculatePage extends StatelessWidget {
                                   Padding(
                                       padding: EdgeInsets.only(
                                           right: 90, left: 90, top: 22),
-                                      child: DynamicTextWidget(
+                                      child: HeaderTextWidget(
                                         text: 'Калькулятор чаевых',
-                                        fontSize: 20,
                                         textalign: TextAlign.center,
                                       )),
                                   Padding(
@@ -55,7 +53,6 @@ class CalculatePage extends StatelessWidget {
                                     child: DynamicTextWidget(
                                       text:
                                           "Для расчета чаевых необходимо заполнить данные ниже:",
-                                      fontSize: 18,
                                       textalign: TextAlign.center,
                                     ),
                                   ),
@@ -65,7 +62,6 @@ class CalculatePage extends StatelessWidget {
                                 padding: EdgeInsets.only(top: 30, left: 16),
                                 child: DynamicTextWidget(
                                   text: "Общая сумма счёта:",
-                                  fontSize: 18,
                                   textalign: TextAlign.left,
                                 ),
                               ),
@@ -79,7 +75,6 @@ class CalculatePage extends StatelessWidget {
                                 padding: EdgeInsets.only(top: 30, left: 16),
                                 child: DynamicTextWidget(
                                   text: "Количество гостей",
-                                  fontSize: 18,
                                   textalign: TextAlign.left,
                                 ),
                               ),
@@ -93,7 +88,6 @@ class CalculatePage extends StatelessWidget {
                                 padding: EdgeInsets.only(top: 30, left: 16),
                                 child: DynamicTextWidget(
                                   text: "Процент чаевых",
-                                  fontSize: 18,
                                   textalign: TextAlign.left,
                                 ),
                               ),
@@ -115,6 +109,8 @@ class CalculatePage extends StatelessWidget {
                                       amount,
                                       guests,
                                     );
+                                    context.router
+                                        .push(const CalculateRoute2());
                                   },
                                 ),
                               ),

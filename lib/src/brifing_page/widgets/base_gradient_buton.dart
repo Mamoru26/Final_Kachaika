@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class GradientButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -29,10 +28,7 @@ class GradientButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           'Рассчитать',
-          style: TextStyle(
-              color: HexColor('FFFFFF'),
-              fontSize: 18,
-              fontFamily: 'assets/fonts/SFPROregular.ttf'),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
     );
