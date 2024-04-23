@@ -1,9 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:petprojectkachaika/core/background.dart';
 import 'package:petprojectkachaika/core/export.dart';
 import 'package:petprojectkachaika/src/init_page/widgets/export_widgets.dart';
 import 'package:flutter/material.dart';
-import '../../core/router/router.dart';
 
 @RoutePage()
 class MyHomePage extends StatefulWidget {

@@ -79,7 +79,8 @@ class CalculatePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(
                                     left: 16, right: 16, top: 10),
                                 child: BaseTextField(
-                                    hintText: 'Опционально, по умолчанию - 1', controller: numberofguests),
+                                    hintText: 'По умолчанию - 1',
+                                    controller: numberofguests),
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(top: 30, left: 16),
@@ -102,16 +103,22 @@ class CalculatePage extends StatelessWidget {
                                         context.read<CalculateModel>();
                                     var amount = amountreceipt;
                                     var guests = numberofguests;
+                                    var contentsnack =
+                                        ScaffoldMessenger.of(context);
+                                    var buildroute = context.router;
                                     modelcalculate.getCalculateData(
                                       amount,
                                       guests,
+                                      contentsnack,
+                                      buildroute,
                                     );
-                                    context.router.push(const CalculateRoute2());
-                                  }, text: 'Рассчитать',
+                                  },
+                                  text: 'Рассчитать',
                                 ),
                               ),
                               Container(
-                                height: MediaQuery.of(context).viewInsets.bottom,
+                                height:
+                                    MediaQuery.of(context).viewInsets.bottom,
                               ),
                             ],
                           ),
