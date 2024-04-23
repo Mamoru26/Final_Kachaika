@@ -29,46 +29,50 @@ class TerminalPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16, top: 30, right: 16),
-              child: Column(children: [
-                const TerminalField(
-                  fieldtext:
-                      'T - чаевые\nB - общая сумма счета\nP - количество гостей\nTip - процент чаевых',
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: TerminalFieldWithText(
-                    headertext: 'Общая сумма чаевых',
-                    fieldtext: 'T = B * Tip/100',
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: TerminalFieldWithText(
-                    headertext: 'Всего к оплате включая чаевые',
-                    fieldtext: 'Bo = B * (1+Tip/100)',
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: TerminalFieldWithText(
-                    headertext: 'Чаевые на человека',
-                    fieldtext: 'T = B * (Tip/100) / P',
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: TerminalFieldWithText(
-                    headertext: 'Общая сумма на 1 человека',
-                    fieldtext: 'Bp= B * (1+Tip/100) / P',
-                  ),
-                ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Text(
-                      'В зависимости от вашего выбора процента чаевых константа применяется в качестве переменной tip',
-                      style: Theme.of(context).textTheme.titleSmall,
-                    )),
-              ]),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const TerminalField(
+                      fieldtext:
+                          'T - чаевые\nB - общая сумма счета\nP - количество гостей\nTip - процент чаевых',
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: TerminalFieldWithText(
+                        headertext: 'Общая сумма чаевых',
+                        fieldtext: 'T = B * Tip/100',
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: TerminalFieldWithText(
+                        headertext: 'Всего к оплате включая чаевые',
+                        fieldtext: 'Bo = B * (1+Tip/100)',
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: TerminalFieldWithText(
+                        headertext: 'Чаевые на человека',
+                        fieldtext: 'T = B * (Tip/100) / P',
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: TerminalFieldWithText(
+                        headertext: 'Общая сумма на 1 человека',
+                        fieldtext: 'Bp= B * (1+Tip/100) / P',
+                      ),
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Text(
+                          'В зависимости от вашего выбора процента чаевых константа применяется в качестве переменной tip',
+                          style: Theme.of(context).textTheme.titleSmall,
+                        )),
+                    const Padding(
+                        padding: EdgeInsets.only(top: 20), child: TipsTable()),
+                  ]),
             )
           ],
         ),
