@@ -15,7 +15,7 @@ class TerminalField extends StatelessWidget {
       height: 102,
       decoration: BoxDecoration(
           color: const Color(0xFFD39FF2).withOpacity(0.2),
-          borderRadius: BorderRadius.circular(10)),
+          borderRadius: BorderRadius.circular(15)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Text(

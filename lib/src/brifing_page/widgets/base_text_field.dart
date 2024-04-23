@@ -20,7 +20,7 @@ class BaseTextField extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: color.withOpacity(opacity),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
