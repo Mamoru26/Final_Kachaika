@@ -45,12 +45,11 @@ class CalculateModel extends ChangeNotifier {
       _tips = _fullamount * _procent;
       _amountoneperson = _tips / _count;
       _amountperson = _allamount / _count;
-      _allamount = _allamount.ceilToDouble();
-      _tips = _tips.ceilToDouble();
-      _amountoneperson = _amountoneperson.ceilToDouble();
-      _amountperson = _amountperson.ceilToDouble();
-      // print(_amountperson.toStringAsFixed(0));
     }
+    _allamount = _allamount.ceilToDouble();
+    _tips = _tips.ceilToDouble();
+    _amountoneperson = _amountoneperson.ceilToDouble();
+    _amountperson = _amountperson.ceilToDouble();
     notifyListeners();
   }
 
