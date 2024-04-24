@@ -66,7 +66,7 @@ class TerminalPage extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: Text(
-                          'В зависимости от вашего выбора процента чаевых константа применяется в качестве переменной tip',
+                          'В зависимости от вашего выбора процента чаевых константа применяется в качестве переменной Tip. Также все вычесления округляются до целых чисел для вашего удобства',
                           style: Theme.of(context).textTheme.titleSmall,
                         )),
                     const Padding(
