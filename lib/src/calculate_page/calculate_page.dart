@@ -64,10 +64,11 @@ class CalculatePage2 extends StatelessWidget {
                           fieldtext: '${value.amountperson.toInt()} ₽',
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 80.0),
-                        child: GradientButton(onPressed: () {  }, text: 'Перевести через СБП',),
-                      )
+                      //Данная кнопка не активна по причине отсутствия подписанного договора с ситемой оплаты, в дальнейшем возможно рассмотрение её добавления
+                      // Padding(
+                      //   padding: const EdgeInsets.only(top: 80.0),
+                      //   child: GradientButton(onPressed: () {  }, text: 'Перевести через СБП',),
+                      // )
                     ],
                   ),
                 )
