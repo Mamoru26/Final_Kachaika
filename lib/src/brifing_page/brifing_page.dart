@@ -79,7 +79,7 @@ class CalculatePage extends StatelessWidget {
                                 padding: const EdgeInsets.only(
                                     left: 16, right: 16, top: 10),
                                 child: BaseTextField(
-                                    hintText: '', controller: numberofguests),
+                                    hintText: '1', controller: numberofguests),
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(top: 30, left: 16),
