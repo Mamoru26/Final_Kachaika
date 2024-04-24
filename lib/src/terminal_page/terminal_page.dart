@@ -19,7 +19,7 @@ class TerminalPage extends StatelessWidget {
               children: [
                 CustomBackButton(),
                 Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 98),
+                    padding: EdgeInsets.symmetric(horizontal: 86),
                     child: HeaderTextWidget(
                       text: 'Как расчитываются чаевые?',
                       textalign: TextAlign.center,
