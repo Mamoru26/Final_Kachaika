@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../core/export.dart';
+import 'common/export.dart';
 import 'widgets/export.dart';
 
 @RoutePage()
 class TerminalPage extends StatelessWidget {
   const TerminalPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +66,7 @@ class TerminalPage extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: Text(
-                          'В зависимости от вашего выбора процента чаевых константа применяется в качестве переменной Tip. Также все вычесления округляются до целых чисел для вашего удобства',
+                          commenttext,
                           style: Theme.of(context).textTheme.titleSmall,
                         )),
                     const Padding(
