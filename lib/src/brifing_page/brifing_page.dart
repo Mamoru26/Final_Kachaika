@@ -21,117 +21,120 @@ class CalculatePage extends StatelessWidget {
         body: PopScope(
             //Виджет PopScope предоставляет возможность внутри Scaffold принудительного закрытия экрана.
             canPop: false,
-            child: Backgrund(
-              SafeArea(
-                  child: GestureDetector(
-                //Виджет GestureDetector предоставляет возможность внутри Scaffold принудительного закрытия клавиатуры.
-                onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-                //Параметр onTap говорит о принудительном закрытии клавиатуры при нажатии на экран.
-                child: Stack(
-                  children: [
-                    Column(
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: ListView(
-                            children: [
-                              const Column(
-                                children: [
-                                  Padding(
+            child: SingleChildScrollView(
+              child: Backgrund(
+                childWidget: 
+                SafeArea(
+                    child: GestureDetector(
+                  //Виджет GestureDetector предоставляет возможность внутри Scaffold принудительного закрытия клавиатуры.
+                  onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                  //Параметр onTap говорит о принудительном закрытии клавиатуры при нажатии на экран.
+                  child: Stack(
+                    children: [
+                      Column(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: ListView(
+                              children: [
+                                const Column(
+                                  children: [
+                                    Padding(
+                                        padding: EdgeInsets.only(
+                                            right: 90, left: 90, top: 22),
+                                        child: HeaderTextWidget(
+                                          text: 'Калькулятор чаевых',
+                                          textalign: TextAlign.center,
+                                        )),
+                                    Padding(
                                       padding: EdgeInsets.only(
-                                          right: 90, left: 90, top: 22),
-                                      child: HeaderTextWidget(
-                                        text: 'Калькулятор чаевых',
+                                          top: 30, right: 16, left: 16),
+                                      child: DynamicTextWidget(
+                                        text:
+                                            "Для расчета чаевых необходимо заполнить данные ниже:",
                                         textalign: TextAlign.center,
-                                      )),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 30, right: 16, left: 16),
-                                    child: DynamicTextWidget(
-                                      text:
-                                          "Для расчета чаевых необходимо заполнить данные ниже:",
-                                      textalign: TextAlign.center,
+                                      ),
                                     ),
+                                  ],
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(top: 30, left: 16),
+                                  child: DynamicTextWidget(
+                                    text: "Общая сумма счёта:",
+                                    textalign: TextAlign.left,
                                   ),
-                                ],
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 30, left: 16),
-                                child: DynamicTextWidget(
-                                  text: "Общая сумма счёта:",
-                                  textalign: TextAlign.left,
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 16, top: 10),
-                                child: BaseTextField(
-                                    hintText: '', controller: amountreceipt),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 30, left: 16),
-                                child: DynamicTextWidget(
-                                  text: "Количество гостей",
-                                  textalign: TextAlign.left,
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 16, right: 16, top: 10),
+                                  child: BaseTextField(
+                                      hintText: '', controller: amountreceipt),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 16, top: 10),
-                                child: BaseTextField(
-                                    hintText: '1', controller: numberofguests),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 30, left: 16),
-                                child: DynamicTextWidget(
-                                  text: "Процент чаевых",
-                                  textalign: TextAlign.left,
+                                const Padding(
+                                  padding: EdgeInsets.only(top: 30, left: 16),
+                                  child: DynamicTextWidget(
+                                    text: "Количество гостей",
+                                    textalign: TextAlign.left,
+                                  ),
                                 ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(
-                                    left: 20, right: 20, top: 10),
-                                child: RadioGroup(),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 16, top: 29),
-                                child: GradientButton(
-                                  onPressed: () {
-                                    CalculateModel modelcalculate =
-                                        context.read<CalculateModel>();
-                                    var amount = amountreceipt;
-                                    var guests = numberofguests;
-                                    var contentsnack =
-                                        ScaffoldMessenger.of(context);
-                                    var buildroute = context.router;
-                                    modelcalculate.getCalculateData(
-                                      amount,
-                                      guests,
-                                      contentsnack,
-                                      buildroute,
-                                    );
-                                  },
-                                  text: 'Рассчитать',
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 16, right: 16, top: 10),
+                                  child: BaseTextField(
+                                      hintText: '1', controller: numberofguests),
                                 ),
-                              ),
-                              Container(
-                                height:
-                                    MediaQuery.of(context).viewInsets.bottom,
-                              ),
-                            ],
+                                const Padding(
+                                  padding: EdgeInsets.only(top: 30, left: 16),
+                                  child: DynamicTextWidget(
+                                    text: "Процент чаевых",
+                                    textalign: TextAlign.left,
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 20, right: 20, top: 10),
+                                  child: RadioGroup(),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 16, right: 16, top: 29),
+                                  child: GradientButton(
+                                    onPressed: () {
+                                      CalculateModel modelcalculate =
+                                          context.read<CalculateModel>();
+                                      var amount = amountreceipt;
+                                      var guests = numberofguests;
+                                      var contentsnack =
+                                          ScaffoldMessenger.of(context);
+                                      var buildroute = context.router;
+                                      modelcalculate.getCalculateData(
+                                        amount,
+                                        guests,
+                                        contentsnack,
+                                        buildroute,
+                                      );
+                                    },
+                                    text: 'Рассчитать',
+                                  ),
+                                ),
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        BaseButtonNoGradient(
-                          onPressed: () {
-                            context.router.push(const TerminalRoute());
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              )),
+                          BaseButtonNoGradient(
+                            onPressed: () {
+                              context.router.push(const TerminalRoute());
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )),
+              ),
             )),
       ),
     );

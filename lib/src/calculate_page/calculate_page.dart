@@ -13,7 +13,7 @@ class CalculatePage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<CalculateModel>(
       builder: (context, value, child) => Scaffold(
-        body: Backgrund(
+        body: Backgrund( childWidget: 
           SafeArea(
               child: Stack(
             children: [

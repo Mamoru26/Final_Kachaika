@@ -10,7 +10,7 @@ class TerminalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Backgrund(SafeArea(
+        body: Backgrund( childWidget:  SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(top: 22, left: 4),
         child: ListView(

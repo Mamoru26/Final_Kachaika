@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Backgrund extends Container {
+class Backgrund extends StatelessWidget {
+  final Widget childWidget;
+
+  const Backgrund({required this.childWidget, super.key});
+
   @override
-  // ignore: overridden_fields
-  final Widget child;
-  Backgrund(this.child, {super.key})
-      : super(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/background/background.png'),
-                  fit: BoxFit.cover)),
-          child: child,
-        );
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height,
+      // height: double.infinity,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/background/background.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: childWidget,
+    );
+  }
 }
