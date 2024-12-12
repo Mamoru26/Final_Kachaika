@@ -1,4 +1,4 @@
-package com.example.petprojectkachaika
+package com.example.kachaika
 
 import io.flutter.embedding.android.FlutterActivity
 

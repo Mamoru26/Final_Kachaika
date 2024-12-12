@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:petprojectkachaika/core/view/calculate_view_model.dart';
+import 'package:kachaika/core/view/calculate_view_model.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../src/brifing_page/brifing_page.dart';
 import '../../src/init_page/init.dart';
 import '../../src/sbp_page/sbp.dart';
-import 'package:petprojectkachaika/src/calculate_page/calculate_page.dart';
+import 'package:kachaika/src/calculate_page/calculate_page.dart';
 import '../../src/terminal_page/terminal_page.dart';
 
 part 'router.gr.dart';

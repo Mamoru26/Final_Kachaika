@@ -1,4 +1,4 @@
-# petprojectkachaika
+# kachaika
 
 A new Flutter project.
 

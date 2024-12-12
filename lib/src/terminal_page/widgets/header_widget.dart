@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:petprojectkachaika/core/export.dart';
+import 'package:kachaika/core/export.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
