@@ -25,11 +25,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
         body: Backgrund(
-          childWidget: 
-          SafeArea(
-              child: Center(
-                child: 
-          Column(children: [
+      childWidget: SafeArea(
+        child: Center(
+          child: Column(children: [
             Padding(
               padding: EdgeInsets.only(top: 55),
               child: LogoWidget(),
@@ -39,8 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: LinearBarInd(),
             )
           ]),
-                ),
-              ),
-        ));
+        ),
+      ),
+    ));
   }
 }
