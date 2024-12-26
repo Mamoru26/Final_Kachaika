@@ -38,7 +38,8 @@ class CalculateViewModel extends ChangeNotifier {
     final guestsText = guestsController.text;
 
     if (amountText.isEmpty || _tipPercentage == 0.0) {
-      _showErrorSnackBar(scaffoldMessenger, 'Не введена сумма чека / не выбран процент чаевых');
+      _showErrorSnackBar(scaffoldMessenger,
+          'Не введена сумма чека / не выбран процент чаевых');
       return;
     }
 
@@ -52,9 +53,12 @@ class CalculateViewModel extends ChangeNotifier {
 
     if (_totalAmount != 0 && _guestCount != 0) {
       _tips = _calculateModel.calculateTips(_totalAmount, _tipPercentage);
-      _totalAmountWithTips = _calculateModel.calculateTotalAmountWithTips(_totalAmount, _tipPercentage);
-      _tipsPerPerson = _calculateModel.calculateTipsPerPerson(_tips, _guestCount);
-      _amountPerPerson = _calculateModel.calculateAmountPerPerson(_totalAmountWithTips, _guestCount);
+      _totalAmountWithTips = _calculateModel.calculateTotalAmountWithTips(
+          _totalAmount, _tipPercentage);
+      _tipsPerPerson =
+          _calculateModel.calculateTipsPerPerson(_tips, _guestCount);
+      _amountPerPerson = _calculateModel.calculateAmountPerPerson(
+          _totalAmountWithTips, _guestCount);
 
       // Округление значений
       _totalAmountWithTips = _totalAmountWithTips.ceilToDouble();
@@ -66,8 +70,17 @@ class CalculateViewModel extends ChangeNotifier {
     }
   }
 
+  void clearData() {
+    _totalAmount = 0;
+    _totalAmountWithTips = 0;
+    _tipsPerPerson = 0;
+    _amountPerPerson = 0;
+    _tips = 0;
+  }
+
   // Показ ошибки
-  void _showErrorSnackBar(ScaffoldMessengerState scaffoldMessenger, String message) {
+  void _showErrorSnackBar(
+      ScaffoldMessengerState scaffoldMessenger, String message) {
     scaffoldMessenger.showSnackBar(
       SnackBar(
         content: ErrorSnackBarContent(
