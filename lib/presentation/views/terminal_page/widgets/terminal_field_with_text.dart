@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import '../../../core/export.dart';
+import '../../../../core/export.dart';
 
-class CalculateField extends StatelessWidget {
+class TerminalFieldWithText extends StatelessWidget {
   final String headertext;
   final String fieldtext;
-  const CalculateField({
+  const TerminalFieldWithText({
     super.key,
     required this.headertext,
     required this.fieldtext,

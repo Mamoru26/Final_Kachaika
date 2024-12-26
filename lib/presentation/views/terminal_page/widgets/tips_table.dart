@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '../../../core/export.dart';
+import '../../../../core/export.dart';
 
 class TipsTable extends StatelessWidget {
   const TipsTable({super.key});

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../src/brifing_page/brifing_page.dart';
-import '../../src/init_page/init.dart';
-import '../../src/sbp_page/sbp.dart';
-import 'package:kachaika/src/calculate_page/calculate_page.dart';
-import '../../src/terminal_page/terminal_page.dart';
+import '../presentation/views/brifing_page/brifing_page.dart';
+import '../presentation/views/init_page/init.dart';
+import '../presentation/views/sbp_page/sbp.dart';
+import 'package:kachaika/presentation/views/calculate_page/calculate_page.dart';
+import '../presentation/views/terminal_page/terminal_page.dart';
 
 part 'router.gr.dart';
 

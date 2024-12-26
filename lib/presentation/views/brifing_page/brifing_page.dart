@@ -2,10 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:kachaika/core/background.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../core/router/router.dart';
-import '../../core/view/calculate_view_model.dart';
+import '../../../router/router.dart';
+import '../../viewmodels/calculate_view_model.dart';
 import 'widgets/export.dart';
-import '../../core/widgets/header_text.dart';
+import '../../../core/widgets/header_text.dart';
 
 @RoutePage()
 // ignore: must_be_immutable

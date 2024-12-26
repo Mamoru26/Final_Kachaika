@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../router/router.dart';
-import '../widgets/error_bar.dart';
+import '../../router/router.dart';
+import '../../core/widgets/error_bar.dart';
 
 class CalculateModel extends ChangeNotifier {
   //Общая сумма чека

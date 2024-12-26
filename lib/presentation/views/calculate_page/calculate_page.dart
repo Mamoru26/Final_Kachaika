@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../core/export.dart';
-import '../../core/view/calculate_view_model.dart';
+import '../../../core/export.dart';
+import '../../viewmodels/calculate_view_model.dart';
 import 'widgets/export.dart';
 
 @RoutePage()

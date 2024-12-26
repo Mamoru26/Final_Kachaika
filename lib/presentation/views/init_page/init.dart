@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:kachaika/core/export.dart';
-import 'package:kachaika/src/init_page/widgets/export_widgets.dart';
+import 'package:kachaika/presentation/views/init_page/widgets/export_widgets.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
