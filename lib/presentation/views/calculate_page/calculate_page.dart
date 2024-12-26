@@ -11,10 +11,10 @@ class CalculatePage2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<CalculateModel>(
+    return Consumer<CalculateViewModel>(
       builder: (context, value, child) => Scaffold(
-        body: Backgrund( childWidget: 
-          SafeArea(
+        body: Backgrund(
+          childWidget: SafeArea(
               child: Stack(
             children: [
               ListView(children: [
@@ -41,27 +41,27 @@ class CalculatePage2 extends StatelessWidget {
                     children: [
                       CalculateField(
                         headertext: 'Общая сумма чаевых',
-                        fieldtext: '${value.tipsamount.toInt()} ₽',
+                        fieldtext: '${value.tipsAmount.toInt()} ₽',
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
                         child: CalculateField(
                           headertext: 'Всего к оплате включая чаевые',
-                          fieldtext: '${value.allamount.toInt()} ₽',
+                          fieldtext: '${value.totalAmount.toInt()} ₽',
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
                         child: CalculateField(
                           headertext: 'Чаевые на человека',
-                          fieldtext: '${value.amountoneperson.toInt()} ₽',
+                          fieldtext: '${value.tipsPerPerson.toInt()} ₽',
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
                         child: CalculateField(
                           headertext: 'Счет на одного человека',
-                          fieldtext: '${value.amountperson.toInt()} ₽',
+                          fieldtext: '${value.amountPerPerson.toInt()} ₽',
                         ),
                       ),
                       //Данная кнопка не активна по причине отсутствия подписанного договора с ситемой оплаты, в дальнейшем возможно рассмотрение её добавления

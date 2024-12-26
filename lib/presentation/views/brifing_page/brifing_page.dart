@@ -16,15 +16,16 @@ class CalculatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<CalculateModel>(
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    final router = AutoRouter.of(context);
+    return Consumer<CalculateViewModel>(
       builder: (context, value, child) => Scaffold(
         body: PopScope(
             //Виджет PopScope предоставляет возможность внутри Scaffold принудительного закрытия экрана.
             canPop: false,
             child: SingleChildScrollView(
               child: Backgrund(
-                childWidget: 
-                SafeArea(
+                childWidget: SafeArea(
                     child: GestureDetector(
                   //Виджет GestureDetector предоставляет возможность внутри Scaffold принудительного закрытия клавиатуры.
                   onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
@@ -81,7 +82,8 @@ class CalculatePage extends StatelessWidget {
                                   padding: const EdgeInsets.only(
                                       left: 16, right: 16, top: 10),
                                   child: BaseTextField(
-                                      hintText: '1', controller: numberofguests),
+                                      hintText: '1',
+                                      controller: numberofguests),
                                 ),
                                 const Padding(
                                   padding: EdgeInsets.only(top: 30, left: 16),
@@ -100,19 +102,13 @@ class CalculatePage extends StatelessWidget {
                                       left: 16, right: 16, top: 29),
                                   child: GradientButton(
                                     onPressed: () {
-                                      CalculateModel modelcalculate =
-                                          context.read<CalculateModel>();
-                                      var amount = amountreceipt;
-                                      var guests = numberofguests;
-                                      var contentsnack =
-                                          ScaffoldMessenger.of(context);
-                                      var buildroute = context.router;
-                                      modelcalculate.getCalculateData(
-                                        amount,
-                                        guests,
-                                        contentsnack,
-                                        buildroute,
-                                      );
+                                      value.calculate(
+                                          amountController: amountreceipt,
+                                          guestsController: numberofguests,
+                                          scaffoldMessenger: scaffoldMessenger);
+                                      if (value.totalAmountWithTips != 0) {
+                                        router.push(const CalculateRoute2());
+                                      }
                                     },
                                     text: 'Рассчитать',
                                   ),

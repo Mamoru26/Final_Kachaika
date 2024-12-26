@@ -7,7 +7,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CalculateModel()),
+        ChangeNotifierProvider(create: (context) => CalculateViewModel()),
       ],
       child:const MyApp()));
 }
