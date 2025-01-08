@@ -36,9 +36,9 @@
 ## Скриншоты приложения
 
 <div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="https://static.rustore.ru/imgproxy/l40Q6C_h-JDkURIEej2fUjZDH7E0DVyAudM_w1bUIgY/preset:screenshot_portrait/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU4NTgxNi9jb250ZW50L1NDUkVFTlNIT1QvYjViMWQ5OTItMjZjMy00ZjU4LWEyYzMtN2Q4MWU4YTE0NzIyLnBuZw==.webp" alt="Скриншот 1" width="300" height="550" />
-  <img src="https://static.rustore.ru/imgproxy/OvcSc9HbGefYxfCvuyERG4T1tiqowST84U3Jiae74Lk/preset:screenshot_portrait/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU4NTgxNi9jb250ZW50L1NDUkVFTlNIT1QvZTBiNWZjNzYtNzIxOC00ZTJhLTgwNTctM2Y3NDk5N2E2ZmM4LnBuZw==.webp" alt="Скриншот 2" width="300" height="550" />
-  <img src="https://static.rustore.ru/imgproxy/gvEgunQrTGAs_PekJZSoqtkFcASE9KdUcfo4IbdjH_A/preset:screenshot_portrait/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU4NTgxNi9jb250ZW50L1NDUkVFTlNIT1QvOTc3NTAxN2EtZjY2Yi00MTk2LTk5ZGUtMGEwYzk1MjE1Mjc3LnBuZw==.webp" alt="Скриншот 3" width="300" height="550" />
+  <img src="https://static.rustore.ru/imgproxy/l40Q6C_h-JDkURIEej2fUjZDH7E0DVyAudM_w1bUIgY/preset:screenshot_portrait/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU4NTgxNi9jb250ZW50L1NDUkVFTlNIT1QvYjViMWQ5OTItMjZjMy00ZjU4LWEyYzMtN2Q4MWU4YTE0NzIyLnBuZw==.webp" alt="Скриншот 1" width="276" height="506" />
+  <img src="https://static.rustore.ru/imgproxy/OvcSc9HbGefYxfCvuyERG4T1tiqowST84U3Jiae74Lk/preset:screenshot_portrait/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU4NTgxNi9jb250ZW50L1NDUkVFTlNIT1QvZTBiNWZjNzYtNzIxOC00ZTJhLTgwNTctM2Y3NDk5N2E2ZmM4LnBuZw==.webp" alt="Скриншот 2" width="276" height="506" />
+  <img src="https://static.rustore.ru/imgproxy/gvEgunQrTGAs_PekJZSoqtkFcASE9KdUcfo4IbdjH_A/preset:screenshot_portrait/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU4NTgxNi9jb250ZW50L1NDUkVFTlNIT1QvOTc3NTAxN2EtZjY2Yi00MTk2LTk5ZGUtMGEwYzk1MjE1Mjc3LnBuZw==.webp" alt="Скриншот 3" width="276" height="506" />
 </div>
 
 ---
