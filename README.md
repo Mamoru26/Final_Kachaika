@@ -1,7 +1,3 @@
-Вот пример, как можно оформить ваш файл `README.md` для проекта "каЧАЙка" с учетом вашего описания и добавлением визуальных элементов:
-
----
-
 # каЧАЙка
 
 ![Логотип приложения](https://static.rustore.ru/imgproxy/GgLYOPicuSyOgFQ4i0TWATef1MvWDSZHXEQ2sO6k2eA/preset:app_card_icon/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU4NTgxNi9jb250ZW50L0lDT04vMDE4YTg4MTUtZGQwYy00Y2FmLThmY2ItMzk1MmE2YThmOTIxLnBuZw==.webp)  
