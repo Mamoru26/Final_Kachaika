@@ -6,6 +6,7 @@ import '../../../router/router.dart';
 import '../../viewmodels/calculate_view_model.dart';
 import 'widgets/export.dart';
 import '../../../core/widgets/header_text.dart';
+import '../../../core/widgets/snack_bar.dart';
 
 @RoutePage()
 // ignore: must_be_immutable
@@ -16,7 +17,7 @@ class CalculatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    ScaffoldMessenger.of(context);
     final router = AutoRouter.of(context);
     return Consumer<CalculateViewModel>(
       builder: (context, value, child) => Scaffold(
@@ -102,12 +103,21 @@ class CalculatePage extends StatelessWidget {
                                       left: 16, right: 16, top: 29),
                                   child: GradientButton(
                                     onPressed: () {
-                                      value.calculate(
+                                      if (amountreceipt.text.isEmpty ||
+                                          value.tipPercentage == 0) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(CustomSnackBar(
+                                          message:
+                                              'Не введена сумма чека / не выбран процент чаевых',
+                                        ) as SnackBar);
+                                      } else {
+                                        value.calculate(
                                           amountController: amountreceipt,
                                           guestsController: numberofguests,
-                                          scaffoldMessenger: scaffoldMessenger);
-                                      if (value.totalAmountWithTips != 0) {
-                                        router.push(const CalculateRoute2());
+                                        );
+                                        if (value.totalAmountWithTips != 0) {
+                                          router.push(const CalculateRoute2());
+                                        }
                                       }
                                     },
                                     text: 'Рассчитать',

@@ -15,7 +15,7 @@ class CalculatePage2 extends StatelessWidget {
       builder: (context, value, child) => Scaffold(
         body: PopScope(
           canPop: true, // Разрешаем возврат на предыдущий экран
-          onPopInvokedWithResult: (bool didPop, Object? result) {
+          onPopInvoked: (didPop) {
             if (didPop) {
               value.clearData(); // Очищаем данные при возврате
             }

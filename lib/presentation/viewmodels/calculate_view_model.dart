@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kachaika/data/models/calculate_model.dart';
-import '../../core/widgets/error_bar.dart';
 
 class CalculateViewModel extends ChangeNotifier {
   final CalculateModel _calculateModel = CalculateModel();
@@ -32,24 +31,12 @@ class CalculateViewModel extends ChangeNotifier {
   void calculate({
     required TextEditingController amountController,
     required TextEditingController guestsController,
-    required ScaffoldMessengerState scaffoldMessenger,
   }) {
     final amountText = amountController.text;
     final guestsText = guestsController.text;
 
-    if (amountText.isEmpty || _tipPercentage == 0.0) {
-      _showErrorSnackBar(scaffoldMessenger,
-          'Не введена сумма чека / не выбран процент чаевых');
-      return;
-    }
-
-    try {
-      _totalAmount = double.parse(amountText);
-      _guestCount = guestsText.isNotEmpty ? double.parse(guestsText) : 1;
-    } catch (e) {
-      _showErrorSnackBar(scaffoldMessenger, 'Некорректный ввод данных');
-      return;
-    }
+    _totalAmount = double.parse(amountText);
+    _guestCount = guestsText.isNotEmpty ? double.parse(guestsText) : 1;
 
     if (_totalAmount != 0 && _guestCount != 0) {
       _tips = _calculateModel.calculateTips(_totalAmount, _tipPercentage);
@@ -76,25 +63,5 @@ class CalculateViewModel extends ChangeNotifier {
     _tipsPerPerson = 0;
     _amountPerPerson = 0;
     _tips = 0;
-  }
-
-  // Показ ошибки
-  void _showErrorSnackBar(
-      ScaffoldMessengerState scaffoldMessenger, String message) {
-    scaffoldMessenger.showSnackBar(
-      SnackBar(
-        content: ErrorSnackBarContent(
-          title: 'Ошибка',
-          message: message,
-        ),
-        backgroundColor: Colors.red,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-        behavior: SnackBarBehavior.floating,
-        padding: EdgeInsets.zero,
-      ),
-    );
   }
 }
